@@ -11,3 +11,12 @@ Our contributions can be outlined as follows:
 3. Proposed WAAM-ViDNet, a multi-modal deep learning model for robust and continuous melt pool width prediction.
 
 We present a two-stage deep learning pipeline for angle-invariant melt pool dimension analysis. First, DeepLabv3 is employed for the semantic segmentation of the melt pool, fine-tuned through active learning to achieve a 96% Dice score, effectively identifying the melt pool region. Second, WAAM-ViDNet predicts the melt pool width with high accuracy, demonstrating no statistically significant difference from the ground truth. Together, these components form a robust vision-based process monitoring system for WAAM.
+
+## Instruction
+The model takes two inputs:
+1. Video of WAAM
+2. Camera calibration metadata (camera matrix, distortion coefficients, rotation matrix, and translation vector)
+
+Here is a sample video of the prototype:
+https://github.com/user-attachments/assets/c7d33783-456d-4ec2-88fe-294c009c18a0
+
