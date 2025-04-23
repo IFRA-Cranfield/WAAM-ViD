@@ -108,67 +108,6 @@ def validate_loop (model, loader, dice_loss, device=torch.device('cuda')):
     
     return epoch_loss
 
-# --- Constants ---
-SEARCH_HEIGHT = 40
-SEARCH_WIDTH = 50
-ROI_HEIGHT = 190
-MIN_ROI_WIDTH = 200
-POOL_Y_OFFSET = 30
-BLUR_KERNEL = 7
-ROI_X_SHIFT_RATIO = 0.3
-ROI_X_SHIFT_LEFT = 20
-ROI_Y_SHIFT_UP = 90
-
-def find_pool_roi_under_light(frame):
-    img_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
-    h_img, w_img = img_gray.shape  # Get image dimensions
-
-    # Apply Gaussian blur if kernel is valid
-    blurred = cv2.GaussianBlur(img_gray, (BLUR_KERNEL, BLUR_KERNEL), 0) if BLUR_KERNEL % 2 == 1 and BLUR_KERNEL > 0 else img_gray
-
-    if blurred.size == 0:
-        return None  # Abort if image is empty
-
-    _, _, _, maxLoc_main = cv2.minMaxLoc(blurred)  # Brightest point
-    main_light_x, main_light_y = maxLoc_main
-
-    # Define search region around light
-    y_start = min(h_img - 1, main_light_y)
-    y_end = min(h_img, y_start + SEARCH_HEIGHT)
-    x_start = max(0, main_light_x - SEARCH_WIDTH // 2)
-    x_end = min(w_img, x_start + SEARCH_WIDTH)
-
-    if y_start >= y_end or x_start >= x_end:
-        return None  # Invalid region
-
-    search_sub = blurred[y_start:y_end, x_start:x_end]  # Crop search region
-    if search_sub.size == 0:
-        return None
-
-    _, _, _, maxLoc_s = cv2.minMaxLoc(search_sub)  # Brightest point in region
-    target_x = maxLoc_s[0] + x_start
-    target_y = maxLoc_s[1] + y_start
-
-    # Define ROI size
-    final_w = max(ROI_HEIGHT, MIN_ROI_WIDTH)
-    final_h = ROI_HEIGHT
-
-    # Compute ROI top-left corner
-    roi_x = target_x - int(final_w * ROI_X_SHIFT_RATIO) - ROI_X_SHIFT_LEFT
-    roi_y = target_y + POOL_Y_OFFSET - ROI_Y_SHIFT_UP
-
-    # Clamp ROI to image bounds
-    roi_x = max(0, min(roi_x, w_img - final_w))
-    roi_y = max(0, min(roi_y, h_img - final_h))
-
-    final_w = min(final_w, w_img - roi_x)
-    final_h = min(final_h, h_img - roi_y)
-
-    if final_w <= 0 or final_h <= 0:
-        return None  # Invalid ROI
-
-    return int(roi_x), int(roi_y), int(final_w), int(final_h)
-
     
 """ Plotting figures """
 def plot_loss(train_loss, val_loss):
