@@ -7,6 +7,7 @@ from scipy import ndimage as ndi
 from albumentations.pytorch import ToTensorV2 
 from torchvision.models.segmentation import deeplabv3_resnet50, DeepLabV3_ResNet50_Weights
 import tempfile
+import regex as re
 
 
 class Videoloader(object):
