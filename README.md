@@ -20,3 +20,6 @@ The model takes two inputs:
 Here is a sample video of the prototype:
 https://github.com/user-attachments/assets/c7d33783-456d-4ec2-88fe-294c009c18a0
 
+## Sample Segmentation Results
+![seg_presentation](https://github.com/user-attachments/assets/f6af48ed-e929-40b1-ae59-6809ce9e37b3)
+
