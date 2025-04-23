@@ -56,7 +56,7 @@ def training_loop (model, loader, optimizer, criterion, device=torch.device('cud
         input1 = input1.repeat(1, 3, 1, 1)  # repeat input1 to match the expected input shape of the model
 
         input2 = torch.cat([
-            batch["camera_metrix"].to(device, dtype=torch.float32),
+            batch["camera_matrix"].to(device, dtype=torch.float32),
             batch["distortion_coefficients"].to(device, dtype=torch.float32),
             batch["rotation_matrix"].to(device, dtype=torch.float32),
             batch["translation_vector"].to(device, dtype=torch.float32)
@@ -92,7 +92,7 @@ def validate_loop (model, loader, criterion, device=torch.device('cuda')):
             input1 = input1.repeat(1, 3, 1, 1)  # repeat input1 to match the expected input shape of the model
 
             input2 = torch.cat([
-                batch["camera_metrix"].to(device, dtype=torch.float32),
+                batch["camera_matrix"].to(device, dtype=torch.float32),
                 batch["distortion_coefficients"].to(device, dtype=torch.float32),
                 batch["rotation_matrix"].to(device, dtype=torch.float32),
                 batch["translation_vector"].to(device, dtype=torch.float32)
@@ -123,7 +123,7 @@ def testing_loop(model, loader, device=torch.device('cuda')):
             input1 = input1.repeat(1, 3, 1, 1)  # repeat input1 to match the expected input shape of the model
 
             input2 = torch.cat([
-                batch["camera_metrix"].to(device, dtype=torch.float32),
+                batch["camera_matrix"].to(device, dtype=torch.float32),
                 batch["distortion_coefficients"].to(device, dtype=torch.float32),
                 batch["rotation_matrix"].to(device, dtype=torch.float32),
                 batch["translation_vector"].to(device, dtype=torch.float32)
