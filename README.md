@@ -4,7 +4,8 @@ WAAM-ViD is an angle-invariant vision-based melt pool dimension analysis pipelin
 The dataset can be found: [link to dataset]
 
 ## Overview Diagram
-![Image](https://github.com/user-attachments/assets/e275ed99-b9d7-416e-a935-3d167f13fa6d)
+![pipeline](https://github.com/user-attachments/assets/73dd3e39-6255-4be1-b4c5-199505bf5034)
+
 
 ## Contribution
 Our contributions can be outlined as follows:
