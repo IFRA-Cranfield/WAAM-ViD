@@ -1,7 +1,7 @@
 # WAAM-ViD
 WAAM-ViD is an angle-invariant vision-based melt pool dimension analysis pipeline developed to perform real-time dimensional analysis of the melt pool in Wire Arc Additive Manufacturing (WAAM). By leveraging advanced image processing and machine learning, it ensures precise monitoring and control to enhance build quality, consistency, and sustainability in Additive Manufacturing.
 
-The dataset can be found: [link to dataset]
+The dataset can be found: [WAAM-ViD Dataset](https://doi.org/10.57996/cran.ceres-2763)
 
 ## Overview Diagram
 ![pipeline](https://github.com/user-attachments/assets/73dd3e39-6255-4be1-b4c5-199505bf5034)
@@ -26,3 +26,8 @@ https://github.com/user-attachments/assets/c7d33783-456d-4ec2-88fe-294c009c18a0
 ## Sample Segmentation Results
 ![seg_presentation](https://github.com/user-attachments/assets/f6af48ed-e929-40b1-ae59-6809ce9e37b3)
 
+## Citation
+For the use of the WAAM-ViD dataset and/or developed codes, please cite our paper:
+```
+
+```
