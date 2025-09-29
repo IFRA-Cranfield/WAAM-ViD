@@ -29,5 +29,14 @@ https://github.com/user-attachments/assets/c7d33783-456d-4ec2-88fe-294c009c18a0
 ## Citation
 For the use of the WAAM-ViD dataset and/or developed codes, please cite our paper:
 ```
-
+@article{Kim2025WAAMViD,
+  title = {WAAM-ViD: Towards Universal Vision-based Monitoring for Wire Arc Additive Manufacturing},
+  author = {Kim, Keun Woo and Kamerkar, Alexander and Chiu, Tzu-En and Abdi, Ibrahim and Qin, Jian and Suder, Wojciech and Asif, Seemal},
+  journal = {Frontiers in Manufacturing Technology},
+  volume={},
+  number={},
+  pages={},
+  year={},
+  publisher={Frontiers}
+}
 ```
