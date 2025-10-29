@@ -34,9 +34,9 @@ Use of the WAAM-ViD dataset and/or the developed code should be acknowledged by 
   author = {Kim, Keun Woo and Kamerkar, Alexander and Chiu, Tzu-En and Abdi, Ibrahim and Qin, Jian and Suder, Wojciech and Asif, Seemal},
   journal = {Frontiers in Manufacturing Technology},
   volume={5},
-  number={},
-  pages={},
   year={2025},
+  DOI={10.3389/fmtec.2025.1676365},
+  ISSN={2813-0359},
   publisher={Frontiers}
 }
 ```
